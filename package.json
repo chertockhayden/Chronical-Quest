@@ -1,0 +1,10 @@
+{
+  "name": "chronicle-quest",
+  "version": "1.0.0",
+  "description": "AP World History learning game and peer study platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
