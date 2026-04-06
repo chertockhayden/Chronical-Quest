@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chronicle Quest | AP World History Through Games</title>
+    <meta
+      name="description"
+      content="Study the AP World History: Modern curriculum through games, shared questions, and profile-based progression."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">AP World History: Modern</p>
+          <h1>Chronicle Quest</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="openAuthButton" class="button ghost">Sign in</button>
+          <button id="logoutButton" class="button ghost hidden">Log out</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="rail">
+          <nav class="rail-nav">
+            <button data-section="dashboard" class="rail-link active">Dashboard</button>
+            <button data-section="curriculum" class="rail-link">Curriculum</button>
+            <button data-section="games" class="rail-link">Games</button>
+            <button data-section="community" class="rail-link">Community</button>
+            <button data-section="shop" class="rail-link">Upgrade Shop</button>
+          </nav>
+
+          <section class="profile-panel" id="profilePanel">
+            <p class="small-label">Scholar Profile</p>
+            <div id="profileCard" class="profile-card">
+              <p>Sign in to save progress, collect points, and join peer Q&A.</p>
+            </div>
+          </section>
+        </aside>
+
+        <section class="content">
+          <section class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">Built from the College Board course guide</p>
+              <h2>Learn world history like an unfolding strategy game.</h2>
+              <p class="hero-text">
+                Play timeline battles, source-analysis drills, and theme-matching rounds while moving through the official AP World History units from 1200 to the present.
+              </p>
+              <div class="hero-actions">
+                <button class="button primary" data-section-jump="games">Play a Game</button>
+                <button class="button secondary" data-section-jump="community">Ask the Community</button>
+              </div>
+            </div>
+
+            <div class="hero-panel">
+              <p class="small-label">Exam Framework Snapshot</p>
+              <div id="examSummary" class="exam-summary"></div>
+            </div>
+          </section>
+
+          <section id="dashboard" class="panel active">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Command Center</p>
+                <h3>Your AP World arc</h3>
+              </div>
+              <span id="welcomeCopy" class="status-pill">Guest mode</span>
+            </div>
+
+            <div class="metrics-grid" id="metricsGrid"></div>
+
+            <div class="dashboard-grid">
+              <article class="surface">
+                <div class="surface-head">
+                  <div>
+                    <p class="eyebrow">Official Units</p>
+                    <h4>Course map</h4>
+                  </div>
+                </div>
+                <div id="unitPreview" class="unit-preview"></div>
+              </article>
+
+              <article class="surface">
+                <div class="surface-head">
+                  <div>
+                    <p class="eyebrow">Daily Momentum</p>
+                    <h4>Fastest path to points</h4>
+                  </div>
+                </div>
+                <ul class="checklist">
+                  <li>Play a rapid recall round and bank score-based XP.</li>
+                  <li>Post a question on a unit you still find fuzzy.</li>
+                  <li>Answer another student and earn bonus coins.</li>
+                  <li>Buy an upgrade once your toolkit is stacked.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section id="curriculum" class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Curriculum</p>
+                <h3>Official AP World History structure</h3>
+              </div>
+              <a id="guideLink" class="text-link" href="#" target="_blank" rel="noreferrer">Open course guide</a>
+            </div>
+            <div id="curriculumGrid" class="curriculum-grid"></div>
+          </section>
+
+          <section id="games" class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Games</p>
+                <h3>Train recall, chronology, and argumentation</h3>
+              </div>
+            </div>
+
+            <div class="games-grid">
+              <article class="surface">
+                <div class="surface-head">
+                  <div>
+                    <p class="eyebrow">Game 1</p>
+                    <h4>Timeline Sprint</h4>
+                  </div>
+                  <span class="status-pill">Chronology</span>
+                </div>
+                <p>Place major developments in the correct historical order before the clock runs out.</p>
+                <div id="timelineGame" class="game-box"></div>
+              </article>
+
+              <article class="surface">
+                <div class="surface-head">
+                  <div>
+                    <p class="eyebrow">Game 2</p>
+                    <h4>Rapid Recall</h4>
+                  </div>
+                  <span class="status-pill">MCQ drill</span>
+                </div>
+                <p>Practice AP-style content knowledge with concise multiple-choice challenges.</p>
+                <div id="rapidGame" class="game-box"></div>
+              </article>
+
+              <article class="surface">
+                <div class="surface-head">
+                  <div>
+                    <p class="eyebrow">Game 3</p>
+                    <h4>Theme Forge</h4>
+                  </div>
+                  <span class="status-pill">Big ideas</span>
+                </div>
+                <p>Match developments to the right AP World themes and sharpen conceptual connections.</p>
+                <div id="connectionsGame" class="game-box"></div>
+              </article>
+            </div>
+          </section>
+
+          <section id="community" class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Peer Q&amp;A</p>
+                <h3>Ask a question. Build someone else’s answer.</h3>
+              </div>
+            </div>
+
+            <div class="community-grid">
+              <article class="surface">
+                <div class="surface-head">
+                  <div>
+                    <p class="eyebrow">New Question</p>
+                    <h4>Study board post</h4>
+                  </div>
+                </div>
+                <form id="questionForm" class="stack-form">
+                  <label>
+                    Unit
+                    <select id="questionUnit"></select>
+                  </label>
+                  <label>
+                    Title
+                    <input id="questionTitle" maxlength="120" placeholder="What part of decolonization is hardest to compare?" />
+                  </label>
+                  <label>
+                    Details
+                    <textarea id="questionBody" rows="5" maxlength="1500" placeholder="Describe what you're stuck on, what evidence you've tried, and what kind of help you want."></textarea>
+                  </label>
+                  <label>
+                    Tags
+                    <input id="questionTags" maxlength="60" placeholder="comparison, dbq, unit-8" />
+                  </label>
+                  <button class="button primary" type="submit">Post question</button>
+                </form>
+              </article>
+
+              <article class="surface">
+                <div class="surface-head">
+                  <div>
+                    <p class="eyebrow">Community Feed</p>
+                    <h4>Questions and answers</h4>
+                  </div>
+                </div>
+                <div id="communityFeed" class="feed"></div>
+              </article>
+            </div>
+          </section>
+
+          <section id="shop" class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Upgrade Shop</p>
+                <h3>Spend coins on better study tools</h3>
+              </div>
+            </div>
+            <div id="shopGrid" class="shop-grid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="authDialog" class="auth-dialog">
+      <form method="dialog" class="auth-shell">
+        <div class="surface-head">
+          <div>
+            <p class="eyebrow">Profile Access</p>
+            <h4>Join Chronicle Quest</h4>
+          </div>
+          <button value="cancel" class="button ghost">Close</button>
+        </div>
+
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-mode="login">Sign in</button>
+          <button type="button" class="auth-tab" data-mode="register">Create account</button>
+        </div>
+
+        <div class="stack-form">
+          <label>
+            Email
+            <input id="emailInput" type="email" maxlength="120" placeholder="you@example.com" />
+          </label>
+          <label id="usernameField" class="hidden">
+            Username
+            <input id="usernameInput" maxlength="24" placeholder="historyhero" />
+          </label>
+          <label id="displayNameField" class="hidden">
+            Display name
+            <input id="displayNameInput" maxlength="32" placeholder="Amina the Archivist" />
+          </label>
+          <label>
+            Password
+            <input id="passwordInput" type="password" maxlength="64" placeholder="At least 6 characters" />
+          </label>
+          <button id="authSubmitButton" type="button" class="button primary">Sign in</button>
+          <p id="authMessage" class="form-message"></p>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./config.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
