@@ -1,4 +1,0 @@
-window.CHRONICLE_CONFIG = {
-  supabaseUrl: "https://zpytkfqxqjhwphsirkov.supabase.co",
-  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpweXRrZnF4cWpod3Boc2lya292Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MzQ5MjAsImV4cCI6MjA5MTAxMDkyMH0.vlAmH9kfHgLSDg3cRqxU1nXBRn-djXZKnZ34EGJ9zcI"
-};
